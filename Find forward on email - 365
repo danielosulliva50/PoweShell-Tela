@@ -1,0 +1,1 @@
+Get-Mailbox <Insert Email> | select UserPrincipalName,ForwardingSmtpAddress,DeliverToMailboxAndForward
