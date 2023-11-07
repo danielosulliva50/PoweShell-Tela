@@ -1,4 +1,4 @@
-Connet to the 365 exchange
+Connect to the 365 exchange
 
 Add-MailboxPermission -Identity <MailboxIdentity> -User <UserIdentity> -AccessRights FullAccess -AutoMapping $false
 
