@@ -1,0 +1,7 @@
+Connet to the 365 exchange
+
+Add-MailboxPermission -Identity <MailboxIdentity> -User <UserIdentity> -AccessRights FullAccess -AutoMapping $false
+
+Mailbox identity is whos mailbox it is. User Identity is who's going to have access to that mailbox
+Remember to take out the <> too
+
