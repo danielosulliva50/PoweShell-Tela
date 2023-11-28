@@ -1,5 +1,1 @@
-$DistributionGroups = Get-DistributionGroup -ResultSize Unlimited
-foreach ($Group in $DistributionGroups) {
-    Write-Host "Members of $($Group.DisplayName):"
-    Get-DistributionGroupMember -Identity $Group.Identity | Select-Object DisplayName, Alias, PrimarySmtpAddress
-    Write-Host "--------------------------"
+
