@@ -1,1 +1,13 @@
+# Get all distribution groups
+$distributionGroups = Get-DistributionGroup -ResultSize Unlimited
+
+# Loop through each distribution group and export members
+foreach ($group in $distributionGroups) {
+    $groupName = $group.DisplayName
+    $members = Get-DistributionGroupMember -Identity $group.Identity
+    $members | Select-Object DisplayName, Alias, PrimarySmtpAddress, RecipientType | Export-Csv -Path "C:\Path\To\Export\$groupName.csv" -NoTypeInformation
+}
+
+(Change file path to where you want to save it)
+
 
