@@ -1,0 +1,2 @@
+Add Exchange Licence
+Start-ManagedFolderAssistant -Identity <email>     without the <>
