@@ -1,0 +1,17 @@
+#install powershell mode
+Install-Module -Name Microsoft.Online.SharePoint.PowerShell
+
+#connect to sharepoint
+Connect-SPOService -Url https://championsuk-admin.sharepoint.com/
+
+#Get users access to Sharepoint
+$sites = Get-SPOSite -Limit All
+
+foreach ($site in $sites) {
+    $siteUrl = $site.Url
+    $userPermissions = Get-SPOUser -Site $siteUrl -LoginName "USERS EMAIL"
+    
+    if ($userPermissions) {
+        Write-Host "User has access to: $siteUrl"
+    }
+}
