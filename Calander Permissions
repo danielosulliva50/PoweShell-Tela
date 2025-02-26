@@ -1,5 +1,9 @@
+Adding Cal permissions
 Add-MailboxFolderPermission -Identity user1@domain.com:\calendar -user user2@domain.com -AccessRights Editor
 
 
 "In order to grant user2 the permission to view and edit user1 calendar items, run the following command"
+
+Viewing someones cal permissions
+
 
