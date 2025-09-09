@@ -1,0 +1,22 @@
+Connect-ExchangeOnline -UserPrincipalName coltest.admin@telatechnology.com
+#connect to exchange online
+
+$groups = Get-DistributionGroup
+
+#then the following
+
+$results = @()
+
+foreach ($group in $groups) {
+    $members = Get-DistributionGroupMember -Identity $group.Identity
+    foreach ($member in $members) {
+        $results += [PSCustomObject]@{
+            GroupName = $group.DisplayName
+            GroupEmail = $group.PrimarySmtpAddress
+            MemberName = $member.DisplayName
+            MemberEmail = $member.PrimarySmtpAddress
+        }
+    }
+}
+
+$results | Export-Csv -Path "C:\DL_Members.csv" -NoTypeInformation
