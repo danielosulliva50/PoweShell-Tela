@@ -16,3 +16,5 @@ This example assigns the user Kevin Kelly Full Access permission to Terry Adams'
 Add-RecipientPermission "Help Desk" -AccessRights SendAs -Trustee "Ayla Kol"
 
 This example gives the user Ayla Kol SendAs permission for the mailbox Help Desk. Ayla can send messages that appear to come directly from the Help Desk mailbox.
+
+Set-Mailbox -Identity "Manager@domain.com" -GrantSendOnBehalfTo "Delegate@domain.com"
