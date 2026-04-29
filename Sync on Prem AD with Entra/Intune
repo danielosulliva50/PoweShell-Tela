@@ -1,0 +1,4 @@
+Start-ADSyncSyncCycle -PolicyType Delta
+
+If successful, will say Success
+
